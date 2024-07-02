@@ -3,7 +3,7 @@ package q3
 object mean {
   def mean(n1:Double, n2:Double):Double = {
     val tot = n1+n2
-    val mean = tot/2
+    val mean = tot/2.0
     val rounded = f"$mean%.2f".toDouble
     rounded
   }
