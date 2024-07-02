@@ -1,18 +1,16 @@
-package q2
-
 object stringLength {
-  def stringLength(s: List[String], str: List[String] = List()): List[String] = {     //str is an empty list by default
-    if (s.isEmpty) str.reverse
-    else {
-      val head = s.head
-      val tail = s.tail
-      if (head.length > 5) stringLength(tail, head :: str)
-      else stringLength(tail, str)
+  def filterstring(strings: List[String]): List[String] = {
+    strings match {
+      case Nil => Nil
+      case head :: tail =>
+        if (head.length > 5) head :: filterstring(tail)
+        else filterstring(tail)
     }
   }
 
   def main(args: Array[String]): Unit = {
-    val input = List("four", "fivewords", "six", "sevens")
-    println(stringLength(input))
+    val inputList = List("DSA", "FP", "Mathematics","Science")
+    val filtered = filterstring(inputList)
+    println(filtered)
   }
 }
