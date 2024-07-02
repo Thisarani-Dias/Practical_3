@@ -5,6 +5,7 @@ object mean {
     val tot = n1+n2
     val mean = tot/2.0
     val rounded = f"$mean%.2f".toDouble
+    println(mean)
     rounded
   }
   def main(args:Array[String]): Unit = {
